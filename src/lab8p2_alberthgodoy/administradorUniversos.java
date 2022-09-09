@@ -3,7 +3,9 @@ package lab8p2_alberthgodoy;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -11,9 +13,10 @@ import java.util.ArrayList;
  * @author godoy
  */
 public class administradorUniversos {
+
     private ArrayList<Universos> adminUniversos = new ArrayList();
     private ArrayList<seresVivos> adminserVivo = new ArrayList();
-     private File archivo;
+    private File archivo;
 
     public administradorUniversos(String path) {
         this.archivo = new File(path);
@@ -47,8 +50,8 @@ public class administradorUniversos {
     public String toString() {
         return "administradorUniversos{" + "adminUniversos=" + adminUniversos + ", adminserVivo=" + adminserVivo + ", archivo=" + archivo + '}';
     }
-    
-    public void cargarArchivoSolistas() {
+
+    public void cargarArchivoUniverso() {
         try {
             adminUniversos = new ArrayList();
             Universos temp;
@@ -73,5 +76,71 @@ public class administradorUniversos {
             ex.printStackTrace();
         }
     }
-     
+
+    public void escribirArchivoUniversos() {
+        FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            fw = new FileOutputStream(archivo);
+            bw = new ObjectOutputStream(fw);
+            for (Universos t : adminUniversos) {
+                bw.writeObject(t);
+            }
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+            }
+        }
+    }
+
+    public void cargarArchivoSerVivo() {
+        try {
+            adminserVivo = new ArrayList();
+            seresVivos temp;
+            if (archivo.exists()) {
+                FileInputStream entrada
+                        = new FileInputStream(archivo);
+                ObjectInputStream objeto
+                        = new ObjectInputStream(entrada);
+                try {
+                    while ((temp = (seresVivos) objeto.readObject()) != null) {
+                        System.out.println(temp);
+                        adminserVivo.add(temp);
+
+                    }
+                } catch (EOFException e) {
+                    System.err.printf(String.format("Hubo un error %s%n", e));
+                }
+                objeto.close();
+                entrada.close();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void escribirArchivoserVivo() {
+        FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            fw = new FileOutputStream(archivo);
+            bw = new ObjectOutputStream(fw);
+            for (seresVivos t : adminserVivo) {
+                bw.writeObject(t);
+            }
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+            }
+        }
+    }
+
 }
