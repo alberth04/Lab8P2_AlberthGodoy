@@ -5,6 +5,7 @@
  */
 package lab8p2_alberthgodoy;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**

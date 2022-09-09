@@ -1,12 +1,13 @@
 package lab8p2_alberthgodoy;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author godoy
  */
-public class Universos {
+public class Universos implements Serializable{
     private String nombre;
     private int cantSeresVivos;
     private ArrayList<seresVivos> seresVivos = new ArrayList();

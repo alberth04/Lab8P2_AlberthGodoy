@@ -1,10 +1,12 @@
 package lab8p2_alberthgodoy;
 
+import java.io.Serializable;
+
 /**
  *
  * @author godoy
  */
-public class seresVivos {
+public class seresVivos implements Serializable{
     private String nombre;
     private String iD;
     private int poderEscala;
