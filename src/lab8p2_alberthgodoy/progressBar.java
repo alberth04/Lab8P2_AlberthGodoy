@@ -6,7 +6,7 @@ import javax.swing.JProgressBar;
  *
  * @author godoy
  */
-public class progressBar {
+public class progressBar extends Thread{
     private boolean vive;
     private JProgressBar jProgressBar;
 

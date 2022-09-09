@@ -80,8 +80,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -94,7 +99,7 @@
                                               <Component id="jTextField_iDSerVivo" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jTextField_NombreUniverso2" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="jTextField_CantSeresVivos" min="-2" pref="96" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -111,19 +116,19 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="jSpinner1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jTextField_iDSerVivo1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                                          <Component id="jTextField_AgeSerVivo" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                           <Component id="jComboBox1" max="32767" attributes="0"/>
-                                                          <Component id="jButton2" max="32767" attributes="0"/>
+                                                          <Component id="jButton_CrearSerVivo" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButton_CrearUniverso" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -146,23 +151,31 @@
                                           <Component id="jComboBox_SerVivo" min="-2" pref="142" max="-2" attributes="0"/>
                                           <Component id="jLabel5" min="-2" pref="117" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                      <Component id="jButton_CargarDatosUniverso" pref="180" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jButton4" min="-2" pref="57" max="-2" attributes="0"/>
-                                          <Component id="jButton3" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="jButton_GuardarDatosSeresVivos" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButton_CargarDatosSerVivo" min="-2" pref="129" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                      <Component id="jButton5" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="368" max="32767" attributes="0"/>
+                          <Component id="jButton_GuardarDatosUniverso" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="293" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -192,10 +205,10 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jTextField_NombreUniverso2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_CantSeresVivos" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -216,19 +229,26 @@
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField_iDSerVivo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextField_AgeSerVivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButton_CrearSerVivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButton_CargarDatosSerVivo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                      <Component id="jButton_CrearUniverso" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jButton_CargarDatosUniverso" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -236,13 +256,18 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton_GuardarDatosSeresVivos" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="91" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                          <Component id="jButton_GuardarDatosUniverso" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="256" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -269,13 +294,8 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox_Universo">
               <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="(DefaultComboBoxModel)jComboUniversos" type="code"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -312,7 +332,7 @@
                 <Property name="text" type="java.lang.String" value="Crear Seres Vivos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_NombreUniverso2">
+            <Component class="javax.swing.JTextField" name="jTextField_CantSeresVivos">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -343,9 +363,9 @@
                 <Property name="text" type="java.lang.String" value="A&#xf1;os"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_iDSerVivo1">
+            <Component class="javax.swing.JTextField" name="jTextField_AgeSerVivo">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_iDSerVivo1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_AgeSerVivoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
@@ -366,32 +386,43 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="jButton_CrearUniverso">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear Universo"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_CrearUniversoMouseClicked"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="jButton_CrearSerVivo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear Seres Vivos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="jButton_GuardarDatosSeresVivos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Guardar Datos"/>
+                <Property name="text" type="java.lang.String" value="Guardar Datos Ser Vivo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_GuardarDatosSeresVivosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="jButton_CargarDatosUniverso">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton4"/>
+                <Property name="text" type="java.lang.String" value="Cargar Datos Universo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="jButton_GuardarDatosUniverso">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar Vatos"/>
+                <Property name="text" type="java.lang.String" value="Guardar Datos Universo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_GuardarDatosUniversoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_CargarDatosSerVivo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cargar Datos Ser Vivo"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -423,14 +454,14 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField_NombreserVivo1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="jTextField_NombreserVivoModificar" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                                               <Component id="jLabel21" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
                                               <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel20" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
-                                              <Component id="jTextField_iDSerVivo3" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="jTextField_iDSerVivoModificar" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jTextField_NombreUniverso3" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="jTextField_CantSerVivosModificar" min="-2" pref="96" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -445,10 +476,10 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jSpinner2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                                              <Component id="jComboBox2" min="-2" pref="87" max="-2" attributes="0"/>
+                                              <Component id="jComboBox_RazaModificar" min="-2" pref="87" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField_iDSerVivo2" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="jTextField_AgeServVivoModificar" min="-2" pref="96" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                               <Component id="jButton6" min="-2" pref="84" max="-2" attributes="0"/>
                                           </Group>
@@ -456,20 +487,20 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextField_NombreUniverso1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <Component id="jTextField_NombreUniversoModificar" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                                           <Component id="jLabel13" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jComboBox_Universo1" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <Component id="jComboBox_UniversoMoficiar" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                           <Component id="jLabel15" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="29" max="32767" attributes="0"/>
+                              <EmptySpace pref="137" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel16" min="-2" pref="117" max="-2" attributes="0"/>
-                                  <Component id="jComboBox_SerVivo1" min="-2" pref="142" max="-2" attributes="0"/>
+                                  <Component id="jComboBox_SerVivoMoficar" min="-2" pref="142" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
@@ -491,14 +522,14 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField_NombreUniverso1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox_Universo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField_NombreUniversoModificar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox_UniversoMoficiar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jComboBox_SerVivo1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox_SerVivoMoficar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -506,14 +537,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jTextField_NombreUniverso3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_CantSerVivosModificar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField_NombreserVivo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField_NombreserVivoModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jSpinner2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -521,13 +552,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Component id="jTextField_iDSerVivo3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextField_iDSerVivoModificar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jTextField_iDSerVivo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextField_AgeServVivoModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -540,7 +571,7 @@
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox_RazaModificar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="105" max="32767" attributes="0"/>
@@ -559,21 +590,21 @@
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_NombreUniverso1">
+            <Component class="javax.swing.JTextField" name="jTextField_NombreUniversoModificar">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cantidad de Seres Vivos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_NombreUniverso3">
+            <Component class="javax.swing.JTextField" name="jTextField_CantSerVivosModificar">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Universo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox_Universo1">
+            <Component class="javax.swing.JComboBox" name="jComboBox_UniversoMoficiar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -588,7 +619,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox_SerVivo1">
+            <Component class="javax.swing.JComboBox" name="jComboBox_SerVivoMoficar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -613,7 +644,7 @@
                 <Property name="text" type="java.lang.String" value="Raza"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="jComboBox_RazaModificar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -638,9 +669,9 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_iDSerVivo2">
+            <Component class="javax.swing.JTextField" name="jTextField_AgeServVivoModificar">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_iDSerVivo2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_AgeServVivoModificarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
@@ -648,14 +679,14 @@
                 <Property name="text" type="java.lang.String" value="A&#xf1;os"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_iDSerVivo3">
+            <Component class="javax.swing.JTextField" name="jTextField_iDSerVivoModificar">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ID"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_NombreserVivo1">
+            <Component class="javax.swing.JTextField" name="jTextField_NombreserVivoModificar">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
@@ -689,7 +720,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="647" max="-2" attributes="0"/>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <EmptySpace pref="131" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
