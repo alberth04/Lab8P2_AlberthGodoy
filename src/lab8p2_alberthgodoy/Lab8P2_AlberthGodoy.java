@@ -161,6 +161,11 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         });
 
         jButton_CargarDatosUniverso.setText("Cargar Datos Universo");
+        jButton_CargarDatosUniverso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_CargarDatosUniversoMouseClicked(evt);
+            }
+        });
 
         jButton_GuardarDatosUniverso.setText("Guardar Datos Universo");
         jButton_GuardarDatosUniverso.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -530,7 +535,20 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     private void jButton_CrearUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CrearUniversoMouseClicked
         //Crear un universos
         try {
-            String nombre = jTextField_NombreUniverso.getText();
+            String nombre="";
+            if (universos.isEmpty()) {
+               nombre = jTextField_NombreUniverso.getText(); 
+            } else {
+                for (int i = 0; i < universos.size(); i++) {
+                    Universos universoSelec = universos.get(i);
+                    if (universoSelec.getNombre().equals(jTextField_NombreUniverso.getText())) {
+                        throw new Exception("Ya hay un universo con ese nombre");
+                    } 
+                    
+                }
+                nombre = jTextField_NombreUniverso.getText();
+            }
+            
             int cantSeresVivos = Integer.parseInt(jTextField_CantSeresVivos.getText());
             Universos universo = new Universos(nombre, cantSeresVivos);
             //Agregar Al ComboBox
@@ -542,6 +560,8 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
             jTextField_CantSeresVivos.setText("");
             JOptionPane.showMessageDialog(this, String.format("Universo %s creado%n", nombre), "Creado", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e){
             JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -557,7 +577,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
             if (universos.isEmpty()) {
                 throw new Exception("No puedes agregar sin tener universos");
             } else {
-                String nombre = jTextField_NombreserVivo.getText();
+                String nombre = "";
                 String iD = "";
                 if (universos.isEmpty()) {
                     //Agregar ID
@@ -571,6 +591,16 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                         }
 
                     }
+                    if (universos.isEmpty()) {
+                        nombre = jTextField_NombreserVivo.getText();
+                    } else {
+                        for (int i = 0; i < seresVivos.size(); i++) {
+                            if (jTextField_NombreserVivo.getText().equals(seresVivos.get(i).getNombre())) {
+                                throw new Exception("Ya esta el nombre del ser vivo");
+                            }
+                        }
+                        nombre = jTextField_NombreserVivo.getText();
+                    }
                     int poderEscala = (int) jSpinner_PoderSerVivo.getValue();
                     int age = Integer.parseInt(jTextField_AgeSerVivo.getText());
                     String procedencia = ((Universos) jComboBox_Universo.getSelectedItem()).getNombre();
@@ -578,7 +608,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                     //Agregar al ArrayList
                     seresVivos serVivo = new seresVivos(nombre, iD, poderEscala, age, procedencia, raza);
                     seresVivos.add(serVivo);
-                     JOptionPane.showMessageDialog(this, String.format("Ser Vivo %s creado%n", nombre), "Creado", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, String.format("Ser Vivo %s creado%n", nombre), "Creado", JOptionPane.INFORMATION_MESSAGE);
                 }
 
             }
@@ -590,11 +620,36 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     private void jButton_GuardarDatosUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_GuardarDatosUniversoMouseClicked
         //Guardar Datos Universo
         //Guardar Todo
-        adminTodoUniverso.setAdminUniversos(universos);
-        adminTodoUniverso.escribirArchivoUniversos();
-        System.out.println(adminTodoUniverso.getAdminUniversos());
-        
+        if (universos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay universos para guardar", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            //Guardar Todo
+            adminTodoUniverso.setAdminUniversos(universos);
+            adminTodoUniverso.escribirArchivoUniversos();
+            System.out.println("Todo ="+ adminTodoUniverso.getAdminUniversos());
+            //Guardar Individual
+            for (int i = 0; i < universos.size(); i++) {
+                Universos univerSelected = universos.get(i);
+                administradorUniversos adminUniversoIndividual = new administradorUniversos("./Archivo/Universos/"+univerSelected.getNombre()+".nose");
+                adminUniversoIndividual.getAdminUniversosIndividual().add(univerSelected);
+                adminUniversoIndividual.escribirArchivoUniversoIndividual();
+                System.out.printf("[%d]:%s%n",i,univerSelected);
+            }
+            
+            JOptionPane.showMessageDialog(this, "Datos Guardados", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_jButton_GuardarDatosUniversoMouseClicked
+
+    private void jButton_CargarDatosUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_CargarDatosUniversoMouseClicked
+        //Cargar datos Universo
+        //Cargar todo
+        adminTodoUniverso.cargarArchivoUniverso();
+        //Agregarlo en el arraylist
+        universos = adminTodoUniverso.getAdminUniversos();
+        System.out.println(universos);
+    }//GEN-LAST:event_jButton_CargarDatosUniversoMouseClicked
 
     /**
      * @param args the command line arguments
