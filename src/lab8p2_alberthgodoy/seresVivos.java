@@ -73,7 +73,7 @@ public class seresVivos implements Serializable{
 
     @Override
     public String toString() {
-        return "seresVivos{" + "nombre=" + nombre + ", iD=" + iD + ", poderEscala=" + poderEscala + ", age=" + age + ", procedencia=" + procedencia + ", raza=" + raza + '}';
+        return String.format("Ser Vivo: %s%n", nombre);
     }
     
     
