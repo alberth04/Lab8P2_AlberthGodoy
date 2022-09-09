@@ -115,12 +115,12 @@
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jSpinner1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jSpinner_PoderSerVivo" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jTextField_AgeSerVivo" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jComboBox1" max="32767" attributes="0"/>
+                                                          <Component id="jComboBox_Raza" max="32767" attributes="0"/>
                                                           <Component id="jButton_CrearSerVivo" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
@@ -216,7 +216,7 @@
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jTextField_NombreserVivo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSpinner_PoderSerVivo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -255,7 +255,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox_Raza" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButton_GuardarDatosSeresVivos" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -346,7 +346,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField_iDSerVivo">
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner1">
+            <Component class="javax.swing.JSpinner" name="jSpinner_PoderSerVivo">
               <Properties>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                   <SpinnerModel initial="0" maximum="10" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
@@ -373,7 +373,7 @@
                 <Property name="text" type="java.lang.String" value="Raza"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JComboBox" name="jComboBox_Raza">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -398,6 +398,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear Seres Vivos"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_CrearSerVivoMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton_GuardarDatosSeresVivos">
               <Properties>
@@ -417,6 +420,7 @@
                 <Property name="text" type="java.lang.String" value="Guardar Datos Universo"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_GuardarDatosUniversoMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_GuardarDatosUniversoActionPerformed"/>
               </Events>
             </Component>
