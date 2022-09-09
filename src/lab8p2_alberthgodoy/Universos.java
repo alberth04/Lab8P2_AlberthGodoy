@@ -43,7 +43,7 @@ public class Universos implements Serializable{
 
     @Override
     public String toString() {
-        return "Universos{" + "nombre=" + nombre + ", cantSeresVivos=" + cantSeresVivos + ", seresVivos=" + seresVivos + '}';
+        return String.format("Universo: %s", nombre);
     }
     
     
