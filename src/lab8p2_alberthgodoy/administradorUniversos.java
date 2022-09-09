@@ -133,7 +133,7 @@ public class administradorUniversos {
 
                     }
                 } catch (EOFException e) {
-                    System.err.printf(String.format("Hubo un error %s%n", e));
+                     System.err.printf(String.format("Se encontro un fin de linea", e));
                 }
                 objeto.close();
                 entrada.close();
@@ -179,7 +179,7 @@ public class administradorUniversos {
 
                     }
                 } catch (EOFException e) {
-                    System.err.printf(String.format("Hubo un error %s%n", e));
+                     System.err.printf(String.format("Se encontro un fin de linea", e));
                 }
                 objeto.close();
                 entrada.close();
@@ -227,7 +227,7 @@ public class administradorUniversos {
 
                     }
                 } catch (EOFException e) {
-                    System.err.printf(String.format("Hubo un error %s%n", e));
+                     System.err.printf(String.format("Se encontro un fin de linea", e));
                 }
                 objeto.close();
                 entrada.close();
