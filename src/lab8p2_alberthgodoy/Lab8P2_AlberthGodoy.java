@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author godoy
  */
 public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
-
+    
     private ArrayList<Universos> universos = new ArrayList();
     private ArrayList<seresVivos> seresVivos = new ArrayList();
     private administradorUniversos adminTodoUniverso = new administradorUniversos("./Archivo/TodoUniversos/todoUniverso.cheemz");
@@ -202,6 +202,8 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                 jButton_AgregarServivoAUniversoMouseClicked(evt);
             }
         });
+
+        jProgressBar_CargarDatoUniverso.setMaximum(universos.size());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -577,7 +579,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                 }
             }
             universoSelect.getSeresVivos().add(serVivoSelect);
-            JOptionPane.showMessageDialog(this, String.format("%s ha sido agregado a %s", universoSelect.getNombre(),serVivoSelect.getNombre()), "Exito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, String.format("%s ha sido agregado a %s", universoSelect.getNombre(), serVivoSelect.getNombre()), "Exito", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -621,7 +623,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                 adminUniversoIndividual.escribirArchivoUniversoIndividual();
                 System.out.printf("[%d]:%s%n", i, univerSelected);
             }
-
+            
             JOptionPane.showMessageDialog(this, "Datos Guardados", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
 
@@ -638,6 +640,16 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         jComboUniversos = new DefaultComboBoxModel();
         for (int i = 0; i < universos.size(); i++) {
             jComboUniversos.addElement(universos.get(i));
+        }
+        //Barra de progreso
+        jProgressBar_CargarDatoUniverso.setMaximum(universos.size());
+        progressBar JBarraUniverso = new progressBar(jProgressBar_CargarDatoUniverso);
+        try {
+            JBarraUniverso.start();
+//            if () {
+//                
+//            }
+        } catch (Exception e) {
         }
         jComboBox_Universo.setModel((DefaultComboBoxModel) jComboUniversos);
         JOptionPane.showMessageDialog(this, "Archivos cargados", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -665,7 +677,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                 adminSerVivoIndividual.escribirArchivoserVivoIndividual();
                 System.out.printf("[%d]:%s%n", i, servivoSelected);
             }
-
+            
             JOptionPane.showMessageDialog(this, "Datos Guardados", "Exito", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton_GuardarDatosSeresVivosMouseClicked
@@ -688,7 +700,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                         } else {
                             iD = jTextField_iDSerVivo.getText();
                         }
-
+                        
                     }
                     if (universos.isEmpty()) {
                         nombre = jTextField_NombreserVivo.getText();
@@ -711,7 +723,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                     jComboSeresVivos.addElement(serVivo);
                     JOptionPane.showMessageDialog(this, String.format("Ser Vivo %s creado%n", nombre), "Creado", JOptionPane.INFORMATION_MESSAGE);
                 }
-
+                
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
@@ -730,11 +742,11 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                     if (universoSelec.getNombre().equals(jTextField_NombreUniverso.getText())) {
                         throw new Exception("Ya hay un universo con ese nombre");
                     }
-
+                    
                 }
                 nombre = jTextField_NombreUniverso.getText();
             }
-
+            
             int cantSeresVivos = Integer.parseInt(jTextField_CantSeresVivos.getText());
             Universos universo = new Universos(nombre, cantSeresVivos);
             //Agregar Al ComboBox
