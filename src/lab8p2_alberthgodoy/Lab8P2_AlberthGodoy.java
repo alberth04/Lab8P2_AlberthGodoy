@@ -899,6 +899,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     private void jButton_ModificarUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_ModificarUniversoMouseClicked
         //Modificar universo
         Universos universoSelect = (Universos) jComboBox_UniversoModificar.getSelectedItem();
+        String oldName = universoSelect.getNombre();
         Universos universoaMoficiar = null;
         try {
             String nombre = "";
@@ -931,6 +932,14 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
             administradorUniversos cambiarUniversoIndividual = new administradorUniversos("./Archivos/Universos/" + universoSelect.getNombre() + ".nose");
             cambiarUniversoIndividual.getAdminUniversosIndividual().add(universoaMoficiar);
             cambiarUniversoIndividual.escribirArchivoUniversoIndividual();
+            //Cambiarnombre archivo individual
+            File archivo = new File("./Archivo/Universos/" + oldName + ".nose");
+            File archivoRenombrar = new File("./Archivo/Universos/" + nombre + ".nose");
+            if (archivoRenombrar.exists()) {
+                System.out.println("Ya existe el archivo");
+            } else {
+                archivo.renameTo(archivoRenombrar);
+            }
             JOptionPane.showMessageDialog(this, String.format("Universo %s Modificado%n", universoSelect.getNombre()), "Creado", JOptionPane.INFORMATION_MESSAGE);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
@@ -953,6 +962,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         //Modificar SerVivo
         seresVivos serVivoSelect = (seresVivos) jComboBox_SerVivoModificar.getSelectedItem();
         seresVivos serVivoModificar = null;
+        String oldName = serVivoSelect.getNombre();
         //Crear serVivo
         try {
             if (universos.isEmpty()) {
@@ -1001,9 +1011,17 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                     adminTodoSerVivo.setAdminserVivo(seresVivos);
                     adminTodoSerVivo.escribirArchivoserVivo();
                     //Modificar individual
-                    administradorUniversos cambiarSerVivoIndivi = new administradorUniversos("./Archivo/SerVivo/"+serVivoSelect.getNombre()+".nose");
+                    administradorUniversos cambiarSerVivoIndivi = new administradorUniversos("./Archivo/SerVivo/" + serVivoSelect.getNombre() + ".nose");
                     cambiarSerVivoIndivi.getAdminserVivoIndividual().add(serVivoModificar);
                     cambiarSerVivoIndivi.escribirArchivoUniversoIndividual();
+                    //Cambiarnombre archivo individual
+                    File archivo = new File("./Archivo/SerVivo/" + oldName + ".nose");
+                    File archivoRenombrar = new File("./Archivo/SerVivo/" + nombre + ".nose");
+                    if (archivoRenombrar.exists()) {
+                        System.out.println("Ya existe el archivo");
+                    } else {
+                        archivo.renameTo(archivoRenombrar);
+                    }
                     JOptionPane.showMessageDialog(this, String.format("Ser Vivo %s modificado%n", serVivoSelect.getNombre()), "Creado", JOptionPane.INFORMATION_MESSAGE);
                 }
 
@@ -1033,28 +1051,42 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         //Remover en el archivo
         adminTodoUniverso.setAdminUniversos(universos);
         adminTodoUniverso.escribirArchivoUniversos();
-        System.out.println(adminTodoUniverso.getAdminUniversos());
-        
+
         //Remover en el individual
-        File archivoaEliminar = new File("./Archivo/Universos/"+nombre+".nose");
+        File archivoaEliminar = new File("./Archivo/Universos/" + nombre + ".nose");
         archivoaEliminar.delete();
         //ComboBox
         jComboUniversos = new DefaultComboBoxModel();
         for (int i = 0; i < universos.size(); i++) {
             jComboUniversos.addElement(universos.get(i));
         }
-        jComboBox_UniversoModificar.setModel((DefaultComboBoxModel)jComboUniversos);
-        jComboBox_UniversoModificar.setModel((DefaultComboBoxModel)jComboUniversos);
-         JOptionPane.showMessageDialog(this, "Universo Eliminado", "Creado", JOptionPane.INFORMATION_MESSAGE);
+        jComboBox_UniversoModificar.setModel((DefaultComboBoxModel) jComboUniversos);
+        jComboBox_UniversoModificar.setModel((DefaultComboBoxModel) jComboUniversos);
+        JOptionPane.showMessageDialog(this, "Universo Eliminado", "Creado", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton_EliminarUniversoMouseClicked
 
     private void jButton_EliminarSerVivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_EliminarSerVivoMouseClicked
         //Eliminar SerVivo
         seresVivos seresVivo = (seresVivos) jComboBox_SerVivoModificar.getSelectedItem();
+        String nombre = seresVivo.getNombre();
         seresVivos.remove(seresVivo);
+        //Remover en el archivo
+        adminTodoSerVivo.setAdminserVivo(seresVivos);
+        adminTodoSerVivo.escribirArchivoserVivo();
+        //Remover en el individual
+        File archivoaEliminar = new File("./Archivo/SerVivo/" + nombre + ".nose");
+        archivoaEliminar.delete();
+        //Actualizar ComboBox
+        //ComboBox
+        jComboSeresVivos = new DefaultComboBoxModel();
+        for (int i = 0; i < seresVivos.size(); i++) {
+            jComboSeresVivos.addElement(seresVivos.get(i));
+        }
+        jComboBox_SerVivoModificar.setModel((DefaultComboBoxModel) jComboSeresVivos);
+        jComboBox_SerVivo.setModel((DefaultComboBoxModel) jComboSeresVivos);
+        JOptionPane.showMessageDialog(this, "SerVivo Eliminado", "Creado", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton_EliminarSerVivoMouseClicked
 
-   
     /**
      * @param args the command line arguments
      */
