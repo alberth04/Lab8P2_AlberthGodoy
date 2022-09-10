@@ -1032,7 +1032,13 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
+        String nombre = jTextField_NombreBusqueda.getText();
+        String ID = jTextField_IDBusqueda.getText();
+        for (int i = 0; i < seresVivos.size(); i++) {
+            if (seresVivos.get(i).getNombre().equals(nombre)) {
+                 JOptionPane.showMessageDialog(this, "Si se encuentra", "Creado", JOptionPane.INFORMATION_MESSAGE);
+            } 
+        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton_EliminarUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_EliminarUniversoMouseClicked
