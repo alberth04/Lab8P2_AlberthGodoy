@@ -73,7 +73,7 @@ public class seresVivos implements Serializable{
 
     @Override
     public String toString() {
-        return String.format("Ser Vivo: %s%n", nombre);
+        return String.format("Ser Vivo: %s", nombre);
     }
     
     

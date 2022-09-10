@@ -71,6 +71,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         jButton_CargarDatosSerVivo = new javax.swing.JButton();
         jButton_AgregarServivoAUniverso = new javax.swing.JButton();
         jProgressBar_CargarDatoUniverso = new javax.swing.JProgressBar();
+        jProgressBar_CargarDatoSerVivo = new javax.swing.JProgressBar();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -91,11 +92,11 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jComboBox_UniversoModificar = new javax.swing.JComboBox<>();
-        jComboBox_SerVivo1 = new javax.swing.JComboBox<>();
+        jComboBox_SerVivoModificar = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButton_ModificarUniverso = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
@@ -205,6 +206,8 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
 
         jProgressBar_CargarDatoUniverso.setMaximum(universos.size());
 
+        jProgressBar_CargarDatoSerVivo.setMaximum(universos.size());
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -281,6 +284,10 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                                     .addComponent(jButton_CargarDatosUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jProgressBar_CargarDatoUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jProgressBar_CargarDatoSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(105, 105, 105))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,7 +356,9 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                         .addComponent(jButton_CargarDatosUniverso)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jProgressBar_CargarDatoUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jProgressBar_CargarDatoSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         jTabbedPane_Inicio.addTab("Crear Universos", jPanel1);
@@ -388,15 +397,25 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
 
         jComboBox_UniversoModificar.setModel((DefaultComboBoxModel)jComboUniversos);
 
-        jComboBox_SerVivo1.setModel((DefaultComboBoxModel)jComboSeresVivos);
+        jComboBox_SerVivoModificar.setModel((DefaultComboBoxModel)jComboSeresVivos);
 
         jLabel23.setText("Ser Vivo");
 
         jButton1.setText("Seleccionar Universo");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Seleccionar Ser Vivo");
 
-        jButton3.setText("Modificar Universo");
+        jButton_ModificarUniverso.setText("Modificar Universo");
+        jButton_ModificarUniverso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_ModificarUniversoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -448,14 +467,14 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                                         .addComponent(jComboBox_RazaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jButton_ModificarUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(98, 336, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBox_SerVivo1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox_SerVivoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(61, 61, 61))
@@ -479,7 +498,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_CantSerVivosModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(jButton_ModificarUniverso))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -496,7 +515,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
                                 .addComponent(jLabel23)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jComboBox_SerVivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox_SerVivoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton2))))
                         .addGap(17, 17, 17)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -597,7 +616,16 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         for (int i = 0; i < seresVivos.size(); i++) {
             jComboSeresVivos.addElement(seresVivos.get(i));
         }
+        //Barra de progreso
+        jProgressBar_CargarDatoSerVivo.setValue(0);
+        jProgressBar_CargarDatoSerVivo.setMaximum(seresVivos.size());
+        progressBar JBarraUniverso = new progressBar(jProgressBar_CargarDatoSerVivo);
+        try {
+            JBarraUniverso.start();
+        } catch (Exception e) {
+        }
         jComboBox_SerVivo.setModel((DefaultComboBoxModel) jComboSeresVivos);
+        jComboBox_SerVivoModificar.setModel((DefaultComboBoxModel) jComboSeresVivos);
         JOptionPane.showMessageDialog(this, "Archivos cargados", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton_CargarDatosSerVivoMouseClicked
 
@@ -642,16 +670,15 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
             jComboUniversos.addElement(universos.get(i));
         }
         //Barra de progreso
+        jProgressBar_CargarDatoUniverso.setValue(0);
         jProgressBar_CargarDatoUniverso.setMaximum(universos.size());
         progressBar JBarraUniverso = new progressBar(jProgressBar_CargarDatoUniverso);
         try {
             JBarraUniverso.start();
-//            if () {
-//                
-//            }
         } catch (Exception e) {
         }
         jComboBox_Universo.setModel((DefaultComboBoxModel) jComboUniversos);
+        jComboBox_UniversoModificar.setModel((DefaultComboBoxModel) jComboUniversos);
         JOptionPane.showMessageDialog(this, "Archivos cargados", "Exito", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton_CargarDatosUniversoMouseClicked
 
@@ -768,6 +795,52 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_AgeSerVivoActionPerformed
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        //Modificar Universo
+        Universos universoSelect = (Universos) jComboBox_UniversoModificar.getSelectedItem();
+        jTextField_NombreUniversoModificar.setText(universoSelect.getNombre());
+        jTextField_CantSerVivosModificar.setText(Integer.toString(universoSelect.getCantSeresVivos()));
+        
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton_ModificarUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_ModificarUniversoMouseClicked
+        //Modificar universo
+         Universos universoSelect = (Universos) jComboBox_UniversoModificar.getSelectedItem();
+        try {
+            String nombre = "";
+            if (universos.isEmpty()) {
+                nombre = jTextField_NombreUniversoModificar.getText();
+            } else {
+                for (int i = 0; i < universos.size(); i++) {
+                    Universos universoSelec = universos.get(i);
+                    if (universoSelec.getNombre().equals(jTextField_NombreUniverso.getText())) {
+                        throw new Exception("Ya hay un universo con ese nombre");
+                    }
+                    
+                }
+                nombre = jTextField_NombreUniversoModificar.getText();
+            }
+            
+            int cantSeresVivos = Integer.parseInt(jTextField_CantSerVivosModificar.getText());
+            //Modificar el universo
+            for (int i = 0; i < universos.size(); i++) {
+                Universos universoaMoficiar = universos.get(i);
+                if (universoaMoficiar.equals(universoSelect)) {
+                    universoaMoficiar.setNombre(nombre);
+                    universoaMoficiar.setCantSeresVivos(cantSeresVivos);
+                }
+            }
+            //Modificar en el archivo
+            adminTodoUniverso.setAdminUniversos(universos);
+            adminTodoUniverso.escribirArchivoUniversos();
+            JOptionPane.showMessageDialog(this, String.format("Universo %s Modificado%n", universoSelect.getNombre()), "Creado", JOptionPane.INFORMATION_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, String.format("%s%n", e), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton_ModificarUniversoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -806,7 +879,6 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton_AgregarServivoAUniverso;
     private javax.swing.JButton jButton_CargarDatosSerVivo;
@@ -815,10 +887,11 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     private javax.swing.JButton jButton_CrearUniverso;
     private javax.swing.JButton jButton_GuardarDatosSeresVivos;
     private javax.swing.JButton jButton_GuardarDatosUniverso;
+    private javax.swing.JButton jButton_ModificarUniverso;
     private javax.swing.JComboBox<String> jComboBox_Raza;
     private javax.swing.JComboBox<String> jComboBox_RazaModificar;
     private javax.swing.JComboBox<String> jComboBox_SerVivo;
-    private javax.swing.JComboBox<String> jComboBox_SerVivo1;
+    private javax.swing.JComboBox<String> jComboBox_SerVivoModificar;
     private javax.swing.JComboBox<String> jComboBox_Universo;
     private javax.swing.JComboBox<String> jComboBox_UniversoModificar;
     private javax.swing.JLabel jLabel1;
@@ -849,6 +922,7 @@ public class Lab8P2_AlberthGodoy extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JProgressBar jProgressBar_CargarDatoSerVivo;
     private javax.swing.JProgressBar jProgressBar_CargarDatoUniverso;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner2;
